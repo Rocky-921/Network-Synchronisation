@@ -1,4 +1,4 @@
-# 🗂️ Networked Directory Synchronisation System
+# Networked Directory Synchronisation System
 
 A multithreaded client–server application for synchronising directories across multiple networked clients using **TCP sockets** and **Linux’s inotify API**.
 
@@ -6,7 +6,7 @@ This project implements a **networked directory synchronisation system** that au
 
 ---
 
-## 🚀 Overview
+## Overview
 
 The system consists of two main components:
 
@@ -18,20 +18,20 @@ File system monitoring is achieved via the **inotify API** (`<sys/inotify.h>`).
 
 ---
 
-## 🧠 Key Features
+## Key Features
 
-- 🧩 **Recursive directory monitoring** — watches all subdirectories, even newly created ones.  
-- 📡 **Real-time synchronisation** — clients immediately receive file and directory updates.  
-- 🚫 **Per-client ignore list** — clients can exclude specific file types from synchronisation.  
-- ⚙️ **Multi-client support** — the server can handle multiple clients simultaneously (up to `max_clients`).  
-- 🧵 **Threaded design** — separate threads for directory monitoring and client communication.  
-- 🪶 **Lightweight and terminal-based** — works entirely from the Linux terminal using standard system calls.
+- **Recursive directory monitoring** — watches all subdirectories, even newly created ones.  
+- **Real-time synchronisation** — clients immediately receive file and directory updates.  
+- **Per-client ignore list** — clients can exclude specific file types from synchronisation.  
+- **Multi-client support** — the server can handle multiple clients simultaneously (up to `max_clients`).  
+- **Threaded design** — separate threads for directory monitoring and client communication.  
+- **Lightweight and terminal-based** — works entirely from the Linux terminal using standard system calls.
 
 ---
 
-## 🖥️ Usage
+## Usage
 
-### 🏠 Server
+### Server
 
 ```bash
 ./syncserver <path_to_local_directory> <port> <max_clients>
@@ -50,7 +50,7 @@ Arguments:
 
  - 'max_clients' — maximum number of concurrent client connections.
 
-### 💻 Client
+### Client
 ```bash
 ./syncclient <path_to_local_directory> <path_to_ignore_list_file> <ip> <port>
 ```
@@ -71,7 +71,7 @@ Arguments:
 
  - 'port' — port number of the server.
 
-### 📜 Ignore List Format
+### Ignore List Format
 
 The ignore list is a comma-separated list of file extensions.
 Example content of ignore.txt:
@@ -81,7 +81,7 @@ Example content of ignore.txt:
 
 When connecting, the client sends this list to the server (in a documented custom format) so that files matching these extensions are not synchronised.
 
-### 🧰 Technologies Used
+### Technologies Used
 
  - C (POSIX)
 
@@ -93,7 +93,7 @@ When connecting, the client sends this list to the server (in a documented custo
 
  - Linux system calls (open, read, write, send, recv, etc.)
 
-### ⚠️ Notes
+### Notes
 
  - The server does not track file content modifications, only creation, deletion, and movement.
 
@@ -102,7 +102,7 @@ When connecting, the client sends this list to the server (in a documented custo
  - Tested on Linux (Ubuntu 22.04+).
 
 ```
-📂 Example Directory Flow
+Example Directory Flow
 Server sync folder:
 └── sync_folder/
     ├── docs/
