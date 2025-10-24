@@ -125,5 +125,5 @@ If ignore.txt contains .png, the client folder will only have:
 ```
 
 ---
-## 🧑‍💻 Author
+## Author
 **Prince Garg**
